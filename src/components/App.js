@@ -1,6 +1,6 @@
 import React from "react";
 import './../styles/App.css';
-import {Routes , Route} from "react-router-dom";
+import {Switch , Route} from "react-router-dom";
 
 const App =()=> {
 
@@ -15,10 +15,10 @@ return (
       </li>
     </ul>
     
-    <Routes>
-      <Route path="/" element={<Home/>}></Route>
-      <Route path="/about" element={<About/>}></Route>
-    </Routes>
+    <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
+      </Switch>
   </div>
 )
 
@@ -39,5 +39,6 @@ const About = ()=> {
     </div>
   )
 }
+
 
 export default App
